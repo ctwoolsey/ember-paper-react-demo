@@ -1,7 +1,7 @@
 # ember-paper-react-demo
 
 This is meant to check out and test functionality of the `ember-paper-react` npm module.  This is a work in progress,
-for development work only.
+for development work only.  Check out the ```app/components``` folder for examples.
 
 ## Prerequisites
 
