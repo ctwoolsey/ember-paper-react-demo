@@ -22,4 +22,4 @@ You will have to update the package.json reference to `ember-paper-react` to poi
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your app at [http://localhost:4201](http://localhost:4201).
