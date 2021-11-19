@@ -1,0 +1,34 @@
+<div id="dialog-tests">
+  <h2>Tests for Dialog Component</h2>
+  <div>
+    <RPaperButton @onClick={{this.onDialogButtonClicked}}>Dialog</RPaperButton>
+  </div>
+
+  <RPaperDialog @id='my-dialog-id' @open={{this.dialogOpen}} @onClose={{this.onDialogClose}} @keepOpenOnClickOutside={{false}} @onBackdropClick={{this.onBackgroundClicked}}>
+    <RPaperDialogTitle id="alert-dialog-title">
+      This is {{this.titleStatement}} awesome
+    </RPaperDialogTitle>
+    Some In between Text
+    <RPaperDialogContent>
+      <RPaperDialogContentText id="alert-dialog-description">
+        Let Google help apps determine location. This means sending anonymous
+        location data to Google, even when no apps are running.
+        <div>
+          {{#each this.contentList as |contentItem|}}
+            <div>{{contentItem}}</div>
+          {{/each}}
+        </div>
+      </RPaperDialogContentText>
+    </RPaperDialogContent>
+    <div>
+      <RPaperButton @onClick={{this.onAddContent}}>Add Content</RPaperButton>
+      <RPaperButton @onClick={{this.onRemoveContent}}>Remove Content</RPaperButton>
+    </div>
+
+    <RPaperDialogActions>
+      <RPaperButton @onClick={{this.onToggleTitleText}}>Toggle Title</RPaperButton>
+      <RPaperButton @color="secondary" @variant="contained" @onClick={{this.onDialogActionBtnClicked}}>Cancel</RPaperButton>
+      <RPaperButton @color="primary" @variant="contained" @onClick={{this.onDialogActionBtnClicked}}>Close</RPaperButton>
+    </RPaperDialogActions>
+  </RPaperDialog>
+</div>

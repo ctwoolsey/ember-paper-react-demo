@@ -1,0 +1,16 @@
+<RPaperChip @label="My Label"/>
+<RPaperChip @label={{this.labelForChip}}/>
+<RPaperChip>
+  <:label>{{this.labelForChip}}</:label>
+</RPaperChip>
+
+<RPaperChip @icon={{this.chipIcon}} @avatar={{true}} @label="icon & avatar" @color="primary">
+  <:avatar><RPaperAvatar>W</RPaperAvatar></:avatar>
+</RPaperChip>
+<RPaperChip @avatar={{true}} @label="avatar only" @color="primary">
+  <:avatar><RPaperAvatar>W</RPaperAvatar></:avatar>
+</RPaperChip>
+<RPaperChip @icon={{this.chipIcon}} @label="secondary, icon only" @color="secondary"/>
+<RPaperChip @icon={{this.chipIconProps}} @label="icon chip"/>
+<RPaperChip @icon={{this.chipIcon}} @label="deletable" @onDelete={{this.handleChipDelete}}/>
+<RPaperChip @label="no icon or avatar" />

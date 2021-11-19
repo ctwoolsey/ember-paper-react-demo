@@ -1,0 +1,41 @@
+<div>
+  <RPaperCheckbox @indeterminate={{false}} @onChange={{this.cbClick}}  @label="Checkbox 1" @labelPlacement="start" @color="secondary"/>
+</div>
+
+<div>
+  <RPaperCheckbox @indeterminate={{false}} @checked={{this.cbClick1Value}} @onChange={{this.cbClick2}} @label="Checkbox 2" @color="primary"/>
+</div>
+
+<div>
+  <RPaperCheckbox @checked={{true}} @onChange={{this.cbClick2}} @label="Checkbox 2" />
+</div>
+
+<div>
+  <RPaperSwitch @onChange={{this.swChange1}} @label="Switch Label" @color="primary"/>
+</div>
+<div>
+  <RPaperSwitch @onChange={{this.swChange2}} @color="secondary"/>
+</div>
+
+<div>
+  <RPaperRadio @onChange={{this.rbClick1}} @label="Radio Label" @color="secondary"/>
+</div>
+<div>
+  <RPaperRadio @onChange={{this.rbClick2}} @color="secondary"/>
+</div>
+<div>
+  <button onclick={{this.onAddRadio}}>Add Radio Button</button>
+  <button onclick={{this.onRemoveRadio}}>Remove Radio Button</button>
+</div>
+<button onclick={{this.updateDirection}}>Toggle RG Direction</button>
+<div>----------</div>
+<RPaperRadioGroup @name="radio-group-2" @defaultValue={{this.radioGroupValue}} @row={{this.radioGroupRow}} @onChange={{this.onRadioGroupChange}}>
+  {{#each this.radioGroups as |radioGroup|}}
+    <RPaperRadio @label={{radioGroup}} @value={{radioGroup}}/>
+  {{/each}}
+</RPaperRadioGroup>
+<div>----------</div>
+
+<div>
+  <span>Radio Group Value: {{this.radioGroupValue}}</span>
+</div>

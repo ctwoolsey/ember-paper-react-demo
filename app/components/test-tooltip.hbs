@@ -1,0 +1,24 @@
+<div id="tooltip-tests">
+  <RPaperTooltip @title="this is a custom area" @useButton={{false}}>
+    <div class="big-area">
+      <h4>Some Title</h4>
+      <p>Descriptive Text</p>
+      <RPaperButton @onClick={{this.tooltipBtnClick}}>Hey, Click Me</RPaperButton>
+    </div>
+  </RPaperTooltip>
+  <RPaperTooltip @title="this is a tooltip" @onClick={{this.tooltipBtnClick}}>
+    My Tool Tips
+  </RPaperTooltip>
+  <RPaperTooltip @title="this is a custom span">
+    <span>A Span</span>
+  </RPaperTooltip>
+  <RPaperTooltip @id='no-button-id' @title="this is a tooltip" @arrow={{true}}>
+    No Button
+  </RPaperTooltip>
+  <RPaperTooltip @title="<h3>Shows HTML</h3><b>Wow!</b><br/><i>Really</i>" @followCursor={{true}}>
+    HTML
+  </RPaperTooltip>
+  <RPaperTooltip @title="Custom Button">
+    <RPaperButton @onClick={{this.tooltipBtnClick}}>Custom Button</RPaperButton>
+  </RPaperTooltip>
+</div>

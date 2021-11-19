@@ -1,0 +1,116 @@
+<div id="autocomplete-tests">
+  <h2>Tests for Autocomplete Components</h2>
+  <button onclick={{this.toggleTheme}}>Toggle Theme</button>
+  <button onclick={{this.addToOptions}}>Add To Options</button>
+  <button onclick={{this.removeFromOptions}}>Remove From Options</button>
+
+  <!-- Native Select -->
+  <div>
+    <RPaperAutocomplete @id='basic-autocomplete' @class="combo-box-ac-demo" @label="Basic Autocomplete" @options={{this.myOptions}} />
+  </div>
+
+  <!--  -->
+  <div>
+    <RPaperAutocomplete  @class='combo-box-ac-demo' @options={{null}} @noOptionsText="nada..." @label="No Options"/>
+  </div>
+
+  <div>
+
+
+    <RPaperAutocomplete  @label="Grouped, No Custom"
+                         @id="test-me"
+                         @disablePortal={{true}}
+                         @options={{this.filmOptions}}
+                         @getOptionLabel={{this.movieOptionLabel}}
+                         @groupBy={{this.movieGrouping}}
+                         @class="combo-box-ac-demo">
+    </RPaperAutocomplete>
+
+
+    <RPaperAutocomplete  @label="No Group/Only Custom Options"
+                         @disablePortal={{true}}
+                         @options={{this.filmOptions}}
+                         @getOptionLabel={{this.movieOptionLabel}}
+                         @filterOptions={{this.optionsFilter}}
+                         @class="combo-box-ac-demo">
+
+      <:options>
+        {{#each this.customFilmOptions as |film|}}
+          <li><u>{{film.title}} ({{film.year}})</u></li>
+        {{/each}}
+      </:options>
+    </RPaperAutocomplete>
+
+
+    <RPaperAutocomplete  @label="Group but Custom Options Only"
+
+                         @disablePortal={{true}}
+                         @options={{this.filmOptions}}
+                         @getOptionLabel={{this.movieOptionLabel}}
+                         @groupBy={{this.movieGrouping}}
+                         @filterOptions={{this.optionsFilter}}
+                         @class="combo-box-ac-demo">
+
+      <:options>
+        {{#each this.customFilmOptions as |film|}}
+          <li><u>{{film.title}} ({{film.year}})</u></li>
+        {{/each}}
+      </:options>
+    </RPaperAutocomplete>
+
+    <RPaperAutocomplete  @label="Custom Headers & Options"
+                         @disablePortal={{true}}
+                         @options={{this.filmOptions}}
+                         @getOptionLabel={{this.movieOptionLabel}}
+                         @groupBy={{this.movieGrouping}}
+                         @filterOptions={{this.optionsFilter}}
+                         @class="combo-box-ac-demo">
+      <:groupHeaders>
+        {{#each this.groupHeaders as |groupHeader|}}
+          <li>
+            Group: {{groupHeader}}
+          </li>
+        {{/each}}
+      </:groupHeaders>
+      <:options>
+        {{#each this.customFilmOptions as |film|}}
+          <li><u>{{film.title}} ({{film.year}})</u></li>
+        {{/each}}
+      </:options>
+    </RPaperAutocomplete>
+
+
+
+    <RPaperAutocomplete  @label="Custom Headers Only"
+                         @disablePortal={{true}}
+                         @options={{this.filmOptions}}
+                         @getOptionLabel={{this.movieOptionLabel}}
+                         @groupBy={{this.movieGrouping}}
+                         @filterOptions={{this.optionsFilter}}
+                         @class="combo-box-ac-demo">
+      <:groupHeaders>
+        {{#each this.groupHeaders as |groupHeader|}}
+          <li>
+            Group: {{groupHeader}}
+          </li>
+        {{/each}}
+      </:groupHeaders>
+    </RPaperAutocomplete>
+
+
+
+    <div>
+      <RPaperAutocomplete  @multiple={{true}} @clearIcon={{this.clearIcon}} @disablePortal={{false}}
+                           @sx={{this.acSX}} @options={{this.countries}} @label="Country" @value={{this.acValue}}
+                           @onChange={{this.onAcChange}} @onInputChange={{this.onInputAcChange}} @getOptionLabel={{this.countryOptionLabel}} @filterOptions={{this.countryFilterOptions}}>
+        <:options>
+          {{#each this.countriesFiltered as |option|}}
+            <li class="li-contents">
+              <span><CountryCode @isoCode={{option.code}}/> {{option.label}} ({{option.code}}) +{{option.phone}}</span>
+            </li>
+          {{/each}}
+        </:options>
+      </RPaperAutocomplete>
+    </div>
+  </div>
+</div>

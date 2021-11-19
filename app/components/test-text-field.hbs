@@ -1,0 +1,53 @@
+<RPaperButton @onClick={{this.onAddContent}}>Add Content</RPaperButton>
+<RPaperButton @onClick={{this.onRemoveContent}}>Remove Content</RPaperButton>
+
+<div>
+  <RPaperTextField @id='my-select' @label="Filled" @variant="filled" @value={{this.inputTextValue}} @onChange={{this.onInputTextChanged}} @select={{true}}>
+    {{#each this.contentList as |contentItem|}}
+      <option value={{contentItem}}>
+        {{contentItem}}
+      </option>
+    {{/each}}
+  </RPaperTextField>
+</div>
+<div>
+  Text: {{this.inputTextValue}}
+</div>
+
+
+<div>
+  <RPaperTextField @id='my-id' @name="my-name" @label="Input Mask" @maskAliases={{this.inputMaskAliases}} @mask={{this.mask}} @onChange={{this.onInputTextInputMaskChanged}}/>
+</div>
+<div>
+  Unmasked Value: {{this.inputUnMaskedTextValue}}
+  <br/>
+  Masked Value: {{this.inputMaskTextValue}}
+</div>
+<div>
+  <RPaperTextField @label="Regular Input" @onChange={{this.onRegularInputTextChanged}}/>
+</div>
+<br/>
+<div>
+  <RPaperTextField  @class="special-class" @id="show-it" @name="greg" @label="Controlled Input" @value={{this.controlInputTextValue}} @onChange={{this.onControlInputTextChanged}}/>
+</div>
+<!--<RPaperMenuItem @key={{1}} @value={{1}}>
+  Menu Item A
+</RPaperMenuItem>
+
+<div>
+  <RPaperTextField
+    @id="outlined-select-currency"
+    @select={{true}}
+    @label="Select"
+    @value={{this.currency}}
+    @onChange={{this.handleCurrencyChange}}
+    @helperText="Please select your currency"
+  >
+    {{#each this.currencies as |option|}}
+      <RPaperMenuItem @key={{option.value}} @value={{option.value}}>
+        {{option.label}}
+      </RPaperMenuItem>
+    {{/each}}
+  </RPaperTextField>
+
+</div>-->

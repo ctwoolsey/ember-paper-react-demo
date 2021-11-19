@@ -1,0 +1,27 @@
+<div id="avatar-tests">
+    <h2>Tests for Avatar Component</h2>
+    <button onclick={{this.onAvatarSpacingBtnClicked}}>Change Spacing</button>
+    <br/>
+    <button onclick={{this.onAvatarGroupVariantBtnClicked}}>Change Variant</button>
+    <br/>
+    <button onclick={{this.onAvatarGroupSizeBtnClicked}}>Change Group Size</button>
+    <br/>
+    <button onclick={{this.onAddAvatar}}>Add Avatar</button>
+    <br/>
+    <button onclick={{this.onRemoveAvatar}}>Remove Avatar</button>
+    <br/><br/>
+    <div class="avatar-group-holder">
+      <RPaperAvatarGroup @max={{this.maxAvatarGroupSize}} @variant={{this.avatarVariant}} @spacing={{this.avatarGroupSpacing}}>
+        {{#each this.avatarContentList as |avatarContentItem|}}
+          <RPaperAvatar>{{avatarContentItem}}</RPaperAvatar>
+        {{/each}}
+      </RPaperAvatarGroup>
+    </div>
+    <br/>
+  <!--<div><RPaperAvatar @variant={{this.avatarVariant}}>N</RPaperAvatar></div>-->
+    <div>
+     <RPaperAvatar><RPaperIcon @reactIcon={{this.avatarIcon}}/></RPaperAvatar>
+    </div>
+    <div><RPaperAvatar @sx={{this.avatarSX}} @variant="square">N</RPaperAvatar></div>
+    <div><RPaperAvatar><RPaperIcon @reactIcon={{this.acUnit}} @color="primary"/></RPaperAvatar></div>
+</div>

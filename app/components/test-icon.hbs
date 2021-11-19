@@ -1,0 +1,17 @@
+<div id="icon-tests">
+  <h2>Tests for Icon Component</h2>
+  <div>Using just @reactIcon:  <RPaperIcon @id='my-react-icon' @reactIcon={{this.alarmIcon}} @color="primary"/><button onclick={{this.changeReactIcon}}>Toggle Icon</button></div>
+  <br/>
+  <div>Google material two tone: <RPaperIcon @baseClassName="material-icons-two-tone" @color="secondary" @iconName={{this.googleIconName}}/><button onclick={{this.changeMaterialIcon}}>Toggle Icon</button></div>
+  <br/>
+  <div>Font Awesome Icon: <RPaperIcon @id='font-awesome-icon' @baseClassName="fas" @class={{this.fontAwesomeIconName}} @color="primary"/><button onclick={{this.changeFontAwesomeIcon}}>Toggle Icon</button></div>
+  <br/>
+  <div>Path Given Icon:
+    <span>
+      <RPaperIcon @hasPath={{true}} @color="primary">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+      </RPaperIcon>
+    </span>
+  </div>
+  <button onclick={{this.toggleTheme}}>Toggle Theme</button>
+</div>

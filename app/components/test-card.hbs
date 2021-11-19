@@ -1,0 +1,40 @@
+<div id="card-tests">
+  <h2>Tests for Card Component</h2>
+  <div class="layout-row layout-align-center">
+    <RPaperCard @class="paper-card-demo" @onClick={{this.onCardClicked}}>
+      <RPaperCardHeader @title={{this.cardTitle}} >
+        <:avatar><RPaperAvatar>Y</RPaperAvatar></:avatar>
+        <:action><RPaperButton @variant="contained" @onClick={{this.changeCardTitle}}>Change Card Title</RPaperButton></:action>
+        <:subheader>A Really Cool Subheader</:subheader>
+        <:title>{{this.cardTitle}}</:title>
+      </RPaperCardHeader>
+      <RPaperCardContent>This is my card content</RPaperCardContent>
+      <RPaperCardActionArea @id="card-action-id">Card Action Area</RPaperCardActionArea>
+      <RPaperCardActions>
+        <RPaperButton @color="primary" @variant="contained" @onClick={{this.onCardActionBtnClick}}>
+          Action Button Press Me
+        </RPaperButton>
+      </RPaperCardActions>
+    </RPaperCard>
+  </div>
+  <div class="layout-row layout-align-center">
+    <RPaperCard @class="paper-card-demo" >
+      <RPaperCardHeader @title={{this.cardTitle}} @subheader="A Nifty Cool Subheader">
+        <:avatar><RPaperAvatar>Y</RPaperAvatar></:avatar>
+        <:action><RPaperButton @variant="contained" @onClick={{this.changeCardTitle}}>Change Card Title</RPaperButton></:action>
+      </RPaperCardHeader>
+      <RPaperCardContent>This is my card content</RPaperCardContent>
+      <RPaperCardActionArea>Card Action Area</RPaperCardActionArea>
+      <RPaperCardActions>
+        <RPaperButton @color="primary" @variant="contained" @onClick={{this.onCardActionBtnClick}}>
+          Action Button Press Me
+        </RPaperButton>
+      </RPaperCardActions>
+    </RPaperCard>
+  </div>
+  <div class="layout-row layout-align-center">
+    <RPaperCard @class="paper-card-demo">
+      <RPaperCardHeader @title={{this.cardTitle}} @subheader="A Nifty Cool Subheader" />
+    </RPaperCard>
+  </div>
+</div>

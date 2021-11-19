@@ -1,0 +1,11 @@
+<button onclick={{this.onAriaChange}}>Change Aria</button>
+<button onclick={{this.onDataChange}}>Change Data</button>
+<button onclick={{this.onRoleChange}}>Change Role</button>
+<RPaperButton id='my-id'
+              @class='my-class2'
+              @data-my-data={{this.myData}}
+              data-my-kebab={{this.myData}}
+              @aria-was-here={{this.myAria}}
+              aria-label={{this.myAria}}
+              @role={{this.myRole}}
+>Button</RPaperButton>

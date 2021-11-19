@@ -1,0 +1,9 @@
+<RPaperCircularProgress/>
+<RPaperButton @variant="contained" @onClick={{this.onToggleBackdrop}}>Show backdrop</RPaperButton>
+<RPaperBackdrop
+  @invisible={{false}}
+  @open={{this.backdropOpen}}
+  @onClick={{this.handleBackdropClose}}
+>
+  <RPaperCircularProgress @color="primary" />
+</RPaperBackdrop>

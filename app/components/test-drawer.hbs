@@ -1,0 +1,38 @@
+<button onclick={{this.onToggleBottomDrawer}}>Toggle Drawer Bottom</button>
+<button onclick={{this.onToggleLeftDrawer}}>Toggle Drawer Left</button>
+<button onclick={{this.onToggleTopDrawer}}>Toggle Drawer Top</button>
+
+<RPaperDrawer @anchor="bottom" @open={{this.drawerBottomOpen}} @onClose={{this.onBottomDrawerClose}} @variant="persistent">
+  <div>This is interesting</div>
+</RPaperDrawer>
+
+<RPaperDrawer @anchor="left" @open={{this.drawerLeftOpen}} @onClose={{this.onLeftDrawerClose}} @ModalProps={{this.leftDrawerModalProps}}>
+  <div>This Left drawer is interesting</div>
+  <div>
+    {{#each this.contentList as |contentItem|}}
+      <div>{{contentItem}}</div>
+    {{/each}}
+  </div>
+  <br/>
+  <RPaperButton @onClick={{this.onAddContent}}>Add Content</RPaperButton>
+  <RPaperButton @onClick={{this.onRemoveContent}}>Remove Content</RPaperButton>
+</RPaperDrawer>
+<!--<RPaperDrawer @anchor="left" @open={{this.drawerLeftOpen}} @onClose={{this.onLeftDrawerClose}}>
+  {{#each this.contentList as |contentItem|}}
+    <div>{{contentItem}}</div>
+  {{/each}}
+
+  <br/>
+  <RPaperButton @onClick={{this.onAddContent}}>Add Content</RPaperButton>
+  <RPaperButton @onClick={{this.onRemoveContent}}>Remove Content</RPaperButton>
+</RPaperDrawer>-->
+
+<RPaperDrawer @id='top-drawer-id' @anchor="top" @open={{this.drawerTopOpen}} @onClose={{this.onTopDrawerClose}}>
+  <div>Top Content</div>
+</RPaperDrawer>
+
+
+<RPaperDrawer @anchor="right" @variant="permanent">
+  <div>This is cool</div>
+</RPaperDrawer>
+

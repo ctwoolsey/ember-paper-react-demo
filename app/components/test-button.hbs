@@ -1,0 +1,39 @@
+<div id="button-tests">
+  <h2>Tests for Button Component</h2>
+  <RPaperButton @id='my-button' @startIcon={{this.alarmIcon}} @color="primary" @variant={{this.variant}}>Wake Me Up Start</RPaperButton>
+  <RPaperButton @endIcon={{this.alarmIcon}} @color="primary" @variant={{this.variant}}>Wake Me Up End</RPaperButton>
+  <RPaperButton @startIcon={{this.alarmIcon}} @endIcon={{this.alarmIcon}} @color="primary" @variant={{this.variant}}>Wake Me Up</RPaperButton>
+  <RPaperButton @color="secondary" @onClick={{this.toggleTheme}}>Toggle Theme</RPaperButton>
+  <RPaperButton @color="primary" @variant={{this.variant}} @onClick={{this.onTestBtnClicked}}>{{this.btnText}}</RPaperButton>
+  <div>
+    <br/>
+    <div>Icon Buttons <button type='button' onclick={{this.onToggleIcons}}>Toggle Icons</button></div>
+    <RPaperIconButton @color="secondary" aria-label="add to shopping cart" >
+      <RPaperIcon @reactIcon={{this.shoppingCartIcon}} />
+    </RPaperIconButton>
+    <RPaperIconButton @color="primary" >
+      <RPaperIcon @baseClassName="material-icons-two-tone" @iconName={{this.googleIconName}}/>
+    </RPaperIconButton>
+    <RPaperIconButton @color="primary" >
+      <RPaperIcon @id='font-awesome-icon' @baseClassName="fas" @class={{this.fontAwesomeIconName}} />
+    </RPaperIconButton>
+  </div>
+
+  <div>
+    <br/>
+    <div>Fab Buttons <button type='button' onclick={{this.onToggleFabIcons}}>Toggle Icons</button></div>
+    <RPaperFab @color="secondary" @ariaLabel="add to shopping cart" >
+      <RPaperIcon @reactIcon={{this.fabShoppingCartIcon}} />
+    </RPaperFab>
+    <RPaperFab @color="primary" @size="medium">
+      <RPaperIcon @baseClassName="material-icons-two-tone" @iconName={{this.fabGoogleIconName}}/>
+    </RPaperFab>
+    <RPaperFab @color="primary" @size="small">
+      <RPaperIcon @id='font-awesome-icon-fab' @baseClassName="fas" @class={{this.fabFontAwesomeIconName}}/>
+    </RPaperFab>
+    <RPaperFab @color="primary" @variant="extended">
+      <RPaperIcon @reactIcon={{this.navigationIcon}} @sx={{this.navigateSX}}/>
+      Navigate
+    </RPaperFab>
+  </div>
+</div>

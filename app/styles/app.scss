@@ -1,0 +1,79 @@
+.my-cb4 {
+  background-color: #ffc520 !important;
+}
+
+.my-cb3 {
+  background-color: #b388ff !important;
+}
+
+#home {
+  h1 {
+    width: 100%;
+    text-align: center;
+  }
+}
+#button-tests {
+
+}
+
+#icon-tests {
+
+}
+
+#avatar-tests {
+  .avatar-group-holder {
+    display: flex;
+  }
+}
+
+#paper-tests {
+  .ember-paper-react-paper {
+    width: 20em;
+    min-height: 10em;
+  }
+  .color-me-blue {
+    background-color: blue;
+  }
+}
+
+#appbar-tests {
+
+}
+
+#select-tests {
+  #age-select {
+    min-width: 80px;
+  }
+  #age-multi-select {
+    min-width: 200px;
+  }
+}
+
+
+#autocomplete-tests {
+  .ember-paper-react-autocomplete {
+    margin-bottom: 10px;
+    &.combo-box-ac-demo {
+      width: 20em;
+    }
+  }
+}
+
+#card-tests {
+  .ember-paper-react-card {
+    width: 20em;
+    padding: 1em;
+  }
+}
+
+#tooltip-tests {
+  .big-area {
+    min-width: 3em;
+    min-height: 5em;
+    background-color: lightyellow;
+    border: 1px solid blueviolet;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+  }
+}

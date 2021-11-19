@@ -1,0 +1,35 @@
+<div id="paper-tests">
+  <h2>Tests for Avatar Component</h2>
+
+  <div class="layout-row">
+    <RPaperButton @onClick={{this.changeElevation}}>Change Elevation</RPaperButton>
+    <RPaperButton @onClick={{this.changeShape}}>Change Shape</RPaperButton>
+    <RPaperButton @onClick={{this.changeVariant}}>Change variant</RPaperButton>
+    <RPaperButton @onClick={{this.changeBackgroundColor}}>Change Background</RPaperButton>
+    <RPaperButton @onClick={{this.toggleClass}}>Toggle Class</RPaperButton>
+    <RPaperButton @onClick={{this.toggleStyle}}>Toggle Style</RPaperButton>
+  </div>
+  <RPaper id="my-paper-id"
+          @onMouseDown={{this.onMouseDown}}
+          @onDoubleClick={{this.onDblClick}}
+          @style={{this.paperStyle}}
+          @class={{this.paperClass}}
+          @sx={{this.paperSX}}
+          @variant={{this.variant}}
+          @elevation={{this.elevation}}
+          @square={{this.square}}>
+    Here is My Paper
+    <div>Elevation: {{this.elevation}}</div>
+    <div>Square: {{this.square}}</div>
+    <div>variant: {{this.variant}}</div>
+
+    <div><RPaperButton @onClick={{this.addButton}}>Add Button</RPaperButton></div>
+    <div><RPaperButton @onClick={{this.removeButton}}>Remove Button</RPaperButton></div>
+
+    {{#each this.buttonList}}
+      <RPaperButton @onClick={{this.changeBackgroundColor}}>Change BackgroundColor</RPaperButton>
+    {{/each}}
+
+  </RPaper>
+
+</div>
