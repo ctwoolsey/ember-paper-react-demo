@@ -11,8 +11,8 @@ export default class TestAvatar extends Component {
   @tracked maxAvatarGroupSize = 5;
   @tracked avatarContent = 'B';
   @tracked avatarContentList = A(['Z', 'A', 'B', 'C']);
-  @tracked avatarGroupSpacing = null;
-  @tracked avatarVariant = null;
+  @tracked avatarGroupSpacing = undefined;
+  @tracked avatarVariant = undefined;
   @tracked avatarColorScheme = 'primary';
   @tracked avatarIcon = AccessAlarmRounded;
   @tracked avatarSX = { bgcolor: deepOrange[500] };
@@ -56,7 +56,7 @@ export default class TestAvatar extends Component {
   @action
   onAvatarSpacingBtnClicked() {
     if (this.avatarGroupSpacing) {
-      this.avatarGroupSpacing = null;
+      this.avatarGroupSpacing = undefined;
     } else {
       this.avatarGroupSpacing = 20;
     }
@@ -64,14 +64,14 @@ export default class TestAvatar extends Component {
 
   @action
   onAvatarGroupVariantBtnClicked() {
-    if (this.avatarVariant === null) {
+    if (this.avatarVariant === undefined) {
       this.avatarVariant = 'rounded';
     } else {
       if (this.avatarVariant === 'rounded') {
         this.avatarVariant = 'square';
       } else {
         if (this.avatarVariant === 'square') {
-          this.avatarVariant = null;
+          this.avatarVariant = undefined;
         }
       }
     }

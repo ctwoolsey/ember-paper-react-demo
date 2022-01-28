@@ -27,5 +27,6 @@ Router.map(function () {
   this.route('text-field');
   this.route('tooltip');
   this.route('paper');
+  this.route('misc');
   this.route('validations');
 });

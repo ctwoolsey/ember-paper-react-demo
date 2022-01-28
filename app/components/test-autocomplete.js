@@ -18,6 +18,8 @@ export default class TestAutocomplete extends Component {
   @tracked acValue = [];
   @tracked countriesFiltered;
   @tracked myOptions;
+  @tracked controlOptions = ['A', 'B', 'C'];
+  @tracked controlledValue = null;
 
   constructor() {
     super(...arguments);
@@ -46,6 +48,16 @@ export default class TestAutocomplete extends Component {
     });
     this.filmOptions.sort(this.filmSorter);
     ////////////////////////////////////////
+  }
+
+  @action
+  controllerChanged(value) {
+    this.controlledValue = value;
+  }
+
+  @action
+  controlledChanged(value) {
+    this.controlledValue = value;
   }
 
   filmSorter(a, b) {

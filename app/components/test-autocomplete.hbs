@@ -9,8 +9,7 @@
     <RPaperAutocomplete @id='basic-autocomplete' @class="combo-box-ac-demo" @label="Basic Autocomplete" @options={{this.myOptions}} />
   </div>
 
-  <!--  -->
-  <div>
+   <div>
     <RPaperAutocomplete  @class='combo-box-ac-demo' @options={{null}} @noOptionsText="nada..." @label="No Options"/>
   </div>
 
@@ -112,5 +111,26 @@
         </:options>
       </RPaperAutocomplete>
     </div>
+
+  </div>
+  <div>
+    <div>Testing Controlled</div>
+    <RPaperAutocomplete  @sx={{this.acSX}}
+                         @label="Controller"
+                         @options={{this.controlOptions}}
+                         @disableClearable={{true}}
+                         @readOnly={{true}}
+                         @onChange={{this.controllerChanged}}
+    >
+    </RPaperAutocomplete>
+    <RPaperAutocomplete  @sx={{this.acSX}}
+                         @label="Controlled"
+                         @options={{this.controlOptions}}
+                         @value={{this.controlledValue}}
+                         @disableClearable={{true}}
+                         @readOnly={{true}}
+                         @onChange={{this.controlledChanged}}
+    >
+    </RPaperAutocomplete>
   </div>
 </div>
