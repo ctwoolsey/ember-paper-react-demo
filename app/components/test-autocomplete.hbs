@@ -5,6 +5,11 @@
   <button onclick={{this.removeFromOptions}}>Remove From Options</button>
 
   <!-- Native Select -->
+  <div>No Label Autocomplete</div>
+  <div>
+    <RPaperAutocomplete @id='basic-autocomplete' @class="combo-box-ac-demo" @label="" @options={{this.myOptions}} />
+  </div>
+
   <div>
     <RPaperAutocomplete @id='basic-autocomplete' @class="combo-box-ac-demo" @label="Basic Autocomplete" @options={{this.myOptions}} />
   </div>
