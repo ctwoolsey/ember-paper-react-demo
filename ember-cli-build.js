@@ -6,8 +6,14 @@ module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
     sassOptions: {
-      extension: 'scss'
-    }
+      extension: 'scss',
+    },
+    webpack: {
+      rules: {
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
+      },
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated

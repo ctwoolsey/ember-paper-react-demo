@@ -9,6 +9,8 @@ import blueGrey from '@mui/material/colors/blueGrey';
 import brown from '@mui/material/colors/brown';
 import pink from '@mui/material/colors/pink';
 import green from '@mui/material/colors/green';
+//import AddQuoteIcon from 'assets/svgicon/addQuoteIcon.svg';
+import { ReactComponent as StarIcon } from 'assets/svgicon/rectangle.svg';
 
 export default class TestIcon extends Component {
   @service themeManager;
@@ -18,6 +20,8 @@ export default class TestIcon extends Component {
 
   constructor() {
     super(...arguments);
+
+    //this.AddQuoteIcon = AddQuoteIcon;
     this.themeNumber = 0;
     this.theme0 = this.themeManager.createTheme({
       primary: {
