@@ -17,15 +17,6 @@
   <RPaperButton @onClick={{this.onAddContent}}>Add Content</RPaperButton>
   <RPaperButton @onClick={{this.onRemoveContent}}>Remove Content</RPaperButton>
 </RPaperDrawer>
-<!--<RPaperDrawer @anchor="left" @open={{this.drawerLeftOpen}} @onClose={{this.onLeftDrawerClose}}>
-  {{#each this.contentList as |contentItem|}}
-    <div>{{contentItem}}</div>
-  {{/each}}
-
-  <br/>
-  <RPaperButton @onClick={{this.onAddContent}}>Add Content</RPaperButton>
-  <RPaperButton @onClick={{this.onRemoveContent}}>Remove Content</RPaperButton>
-</RPaperDrawer>-->
 
 <RPaperDrawer @id='top-drawer-id' @anchor="top" @open={{this.drawerTopOpen}} @onClose={{this.onTopDrawerClose}}>
   <div>Top Content</div>
