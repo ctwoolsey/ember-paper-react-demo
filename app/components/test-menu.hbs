@@ -1,11 +1,13 @@
 <RPaperButton @onClick={{this.onAddMenuContent}}>Add Menu Content</RPaperButton>
 <RPaperButton @onClick={{this.onRemoveMenuContent}}>Remove Menu Content</RPaperButton>
+
 <RPaperButton id="menuTrigger" @color="primary" @variant="contained" @onClick={{this.onToggleMenu}}>Toggle Menu by triggerId</RPaperButton>
 <RPaperMenu @id='my-menu' @triggerId="menuTrigger" @open={{this.menuOpen}} @onClose={{this.onMenuClose}}>
   {{#each this.contentList as |contentItem|}}
     <RPaperMenuItem @onClick={{this.onMenuItemClicked}}>{{contentItem}}</RPaperMenuItem>
   {{/each}}
 </RPaperMenu>
+
 <RPaperButton id="menuTrigger2" @color="primary" @variant="contained" @onClick={{this.onToggleMenu2}}>Toggle Menu By anchorEl</RPaperButton>
 <RPaperMenu @anchorEl={{this.menu2Anchor}} @open={{this.menuOpen2}} @onClose={{this.onMenuClose2}}>
   {{#each this.contentList as |contentItem|}}

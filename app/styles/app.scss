@@ -67,13 +67,19 @@
 }
 
 #tooltip-tests {
-  .big-area {
-    min-width: 3em;
-    min-height: 5em;
-    background-color: lightyellow;
-    border: 1px solid blueviolet;
-    padding: 10px;
-    display: inline-block;
-    text-align: center;
+  .normalWidth {
+    width: 10em;
+  }
+  .bigWidth {
+    width: 15em;
+    .big-area {
+      min-width: 3em;
+      min-height: 5em;
+      background-color: lightyellow;
+      border: 1px solid blueviolet;
+      padding: 10px;
+      display: inline-block;
+      text-align: center;
+    }
   }
 }
