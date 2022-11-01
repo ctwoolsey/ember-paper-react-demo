@@ -4,70 +4,82 @@ import { inject as service } from '@ember/service';
 import { A } from '@ember/array';
 import { tracked } from '@glimmer/tracking';
 import deepOrange from '@mui/material/colors/deepOrange';
+import { next } from '@ember/runloop';
 
 export default class TestMisc extends Component {
-  @tracked optionValue = null;
-  @tracked buttonValue = 0;
-  @tracked filterdOptions = [];
+  @tracked oneOptionValue = null;
+  @tracked twoOptionValue = null;
+ // @tracked twoOptions = null;
 
   constructor() {
     super(...arguments);
     this.acSX = { width: 300 };
-    this.options = [
+    this.oneOptions = [
       {
-        value: 1,
-        name: 'Choice 1',
+        value: 'singles',
+        name: 'Singles',
       },
       {
-        value: 2,
-        name: 'Choice 2',
+        value: 'doubles',
+        name: 'Doubles',
       },
       {
-        value: 3,
-        name: 'Choice 3',
+        value: 'triples',
+        name: 'Triples',
       },
     ];
-    this.filterdOptions = this.options.filter(this._filterFunction.bind(this));
+
+    this.singleOptions = [
+      {
+        value: 'a',
+        name: 'A',
+      },
+      {
+        value: 'b',
+        name: 'B',
+      },
+      {
+        value: 'c',
+        name: 'C',
+      },
+      {
+        value: 'd',
+        name: 'D',
+      },
+      {
+        value: 'e',
+        name: 'E',
+      },
+    ];
+
+    this.doubleOptions = [
+      {
+        value: 'aa',
+        name: 'AA',
+      },
+      {
+        value: 'bb',
+        name: 'BB',
+      },
+      {
+        value: 'cc',
+        name: 'CC',
+      },
+    ];
+
+    this.tripleOptions = [
+      {
+        value: 'aaa',
+        name: 'AAA',
+      },
+      {
+        value: 'bbb',
+        name: 'BBB',
+      },
+    ];
   }
 
-  get optionArray() {
-    console.log(`=============`);
-    let arr = this.filterdOptions; //this.options.filter(this._filterFunction.bind(this));
-    console.log(`=============`);
-    return arr;
-  }
-
-  _filterFunction(optionItem) {
-    let retValue = false;
-
-    switch (this.buttonValue) {
-      case 0:
-        retValue = true;
-        break;
-      case 1:
-        if (optionItem.value === 1 || optionItem.value === 2) {
-          retValue = true;
-        }
-        break;
-      case 2:
-        if (optionItem.value === 2) {
-          retValue = true;
-        }
-        break;
-      case 3:
-        if (optionItem.value === 3) {
-          retValue = true;
-        }
-        break;
-    }
-
-    console.log(
-      `BV: ${this.buttonValue}, Item: ${optionItem.name} == ${retValue}`
-    );
-
-    return retValue;
-  }
-
+  @action
   optionsLabel(optionItem) {
     if (optionItem) {
       return optionItem.name;
@@ -76,36 +88,69 @@ export default class TestMisc extends Component {
     }
   }
 
-  @action
-  optionChanged(value) {
-    this.optionValue = value;
+  //change options by using get doesn't work after first change
+  get twoOptions() {
+    if (this.oneOptionValue) {
+      switch (this.oneOptionValue.value) {
+        case 'singles':
+          console.log('assigning singleOptions');
+          return this.singleOptions;
+        case 'doubles':
+          console.log('assigning doubleOptions');
+          return this.doubleOptions;
+        case 'triples':
+          console.log('assigning tripleOptions');
+          return this.tripleOptions;
+        default:
+          return null;
+      }
+    } else {
+      return null;
+    }
   }
 
   @action
-  onButtonClear() {
-    console.log('bv0');
-    this.buttonValue = 0;
-    this.filterdOptions = this.options.filter(this._filterFunction.bind(this));
+  oneOptionChanged(value) {
+    this.oneOptionValue = value;
+    this.twoOptionValue = null;
   }
 
   @action
-  onButtonChoice1() {
-    console.log('bv1');
-    this.buttonValue = 1;
-    this.filterdOptions = this.options.filter(this._filterFunction.bind(this));
+  twoOptionChanged(value) {
+    this.twoOptionValue = value;
+  }
+
+  /*@action
+  oneOptionChanged(value) {
+    this.oneOptionValue = value;
+    this.twoOptionValue = null;
+
+    switch (this.oneOptionValue.value) {
+      case 'singles':
+        console.log('assigning singleOptions');
+        this.twoOptions = this.singleOptions;
+        console.log(`--------------`);
+        break;
+      case 'doubles':
+        console.log('assigning doubleOptions');
+        this.twoOptions = this.doubleOptions;
+        console.log(`--------------`);
+        break;
+      case 'triples':
+        console.log('assigning tripleOptions');
+        this.twoOptions = this.tripleOptions;
+        console.log(`--------------`);
+        break;
+    }
   }
 
   @action
-  onButtonChoice2() {
-    console.log('bv2');
-    this.buttonValue = 2;
-    this.filterdOptions = this.options.filter(this._filterFunction.bind(this));
-  }
+  twoOptionChanged(value) {
+    this.twoOptionValue = value;
+  }*/
 
-  @action
-  onButtonChoice3() {
-    console.log('bv3');
-    this.buttonValue = 3;
-    this.filterdOptions = this.options.filter(this._filterFunction.bind(this));
-  }
+  /*@action
+  twoOptionsUpdated() {
+    console.log('twoOptionsUpdated');
+  }*/
 }

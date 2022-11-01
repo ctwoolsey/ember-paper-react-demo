@@ -1,18 +1,26 @@
-<div class="layout-row">
-  <button onclick={{this.onButtonClear}}>Clear</button>
-  <button onclick={{this.onButtonChoice1}}>Choice 1</button>
-  <button onclick={{this.onButtonChoice2}}>Choice 2</button>
-  <button onclick={{this.onButtonChoice3}}>Choice 3</button>
-</div>
-<div>
+
+<div class='layout-row'>
+  <div>One</div>
   <RPaperAutocomplete
     @sx={{this.acSX}}
-    @options={{this.filterdOptions}}
-    @placeholder="Please Select"
+    @options={{this.oneOptions}}
     @getOptionLabel={{this.optionsLabel}}
-    @value={{this.optionValue}}
+    @value={{this.oneOptionValue}}
     @disableClearable={{true}}
     @readOnly={{true}}
-    @onChange={{this.optionChanged}}>
+    @onChange={{this.oneOptionChanged}}>
+  </RPaperAutocomplete>
+</div>
+<br>
+<div class='layout-row'>
+  <div>Two</div>
+  <RPaperAutocomplete
+    @sx={{this.acSX}}
+    @options={{this.twoOptions}}
+    @getOptionLabel={{this.optionsLabel}}
+    @value={{this.twoOptionValue}}
+    @disableClearable={{true}}
+    @readOnly={{true}}
+    @onChange={{this.twoOptionChanged}}>
   </RPaperAutocomplete>
 </div>
