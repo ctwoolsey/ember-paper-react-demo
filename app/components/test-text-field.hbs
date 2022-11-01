@@ -1,34 +1,4 @@
-<!--<RPaperButton @onClick={{this.onAddContent}}>Add Content</RPaperButton>
-<RPaperButton @onClick={{this.onRemoveContent}}>Remove Content</RPaperButton>
-
-<div>
-  <RPaperTextField @id='my-select' @label="Filled" @variant="filled" @value={{this.inputTextValue}} @onChange={{this.onInputTextChanged}} @select={{true}}>
-    {{#each this.contentList as |contentItem|}}
-      <option value={{contentItem}}>
-        {{contentItem}}
-      </option>
-    {{/each}}
-  </RPaperTextField>
-</div>
-<div>
-  Text: {{this.inputTextValue}}
-</div>
-
-
-<div>
-  <RPaperNumberFormatTextField @id='NF-Currency' @name="NF-Currency-Name" @label="NF Currency Mask"@thousandSeparator={{true}} @prefix="$ " @decimalScale={{0}} @nativeOnChange={{true}} @onChange={{this.onInputTextInputMaskChanged}}/>
-  <RPaperIMaskTextField @label="I Mask Currency No Decimal"  @maskName="currencyNoDecimal"/>
-  <RPaperIMaskTextField @label="I Mask Currency With Decimal"  @maskName="currencyWithDecimal"/>
-</div>
-<div>
-  Unmasked Value: {{this.inputUnMaskedTextValue}}
-</div>
-<br/>-->
-
-
-
-
-
+<!--
 <div>
   <RPaperTextField @label="Regular Input" @nativeOnChange={{true}} @onChange={{this.onRegularInputTextChangedNative}}/>
   <RPaperTextField  @class="special-class" @id="show-it" @name="greg" @label="Controlled Input" @value={{this.controlInputTextValue}} @onChange={{this.onControlInputTextChanged}}/>
@@ -41,43 +11,31 @@
 </div>
 <br/>
 <div>
-  <RPaperNumberFormatTextField @label="Regular NMask" @maskName="currencyNoDecimal" @onChange={{this.onRegularNMaskTextChanged}}/>
-  <RPaperNumberFormatTextField  @label="Controlled NMask" @maskName="currencyNoDecimal" @value={{this.controlNMaskTextValue}} @onChange={{this.onControlNMaskTextChanged}}/>
+  <RPaperNumberFormatNumericTextField @label="Regular NMask" @maskName="currencyNoDecimal" @onChange={{this.onRegularNMaskTextChanged}}/>
+  <RPaperNumberFormatNumericTextField  @label="Controlled NMask" @maskName="currencyNoDecimal" @clearOnFocus={{true}} @value={{this.controlNMaskTextValue}} @onChange={{this.onControlNMaskTextChanged}}/>
 </div>
 <br/>
 <div>
-  <RPaperNumberFormatTextField @label="NF Percent Mask" @maskName="percentageWithDecimal"/>
+  <RPaperNumberFormatNumericTextField @label="NF Percent Mask" @maskName="percentageWithDecimal"/>
   <RPaperIMaskTextField @label="I Mask Percentage"  @maskName="percentageWithDecimal"/>
 </div>
 <br/>
 <div>
-  <RPaperTextField @isTouched={{true}} @errors={{this.textFieldErrors}} @value="" @label="TextField Errors"/>
+  <RPaperTextField @isTouched={{true}} @errors={{this.textFieldErrors}} @label="TextField Errors"/>
 </div>
-
-
-
-
-
-
-
-
-<!--Old-->
+<br/>
 <div>
-  <!--<RPaperTextField @label="Regular Input" @onChange={{this.onRegularInputTextChanged}}/>-->
+  <RPaperNumberFormatNumericTextField @label="Default Non Select Value NMask" @inputProps={{this.inputModeInputProps}} @defaultValue={{0}} @maskName="currencyWithDecimal" @selectAllOnFocus={{false}} @onChange={{this.onDefaultValueNMaskTextChanged}}/>
+</div>
+<br/>
+<div>
+  <RPaperNumberFormatPatternTextField @label="Pattern NMask" @format="### ###" @value={{this.controlNMaskPatternValue}} @allowEmptyFormatting={{true}} @mask="_" @onChange={{this.onControlNMaskPatternValueChanged}}/>
 </div>
 <div>
-  <!--<RPaperIMaskTextField @label="I Mask" @value={{this.iMaskControlledValue}} @mask={{this.iMask}} @prepare={{this.iMaskPrepare}} @onChange={{this.onIMaskInputTextChanged}}/>-->
-  <!--<RPaperIMaskTextField @label="I Mask" @value={{this.iMaskControlledValue}} @mask={{this.iMask}} @prepare={{this.iMaskPrepare}}/>-->
-  <!--<RPaperIMaskTextField @label="I Mask" @mask={{this.iMask}} @prepare={{this.iMaskPrepare}}/>-->
-</div>
-
+  <RPaperTextField @inputProps={{this.inputModeInputProps}}/>
+</div>-->
+<br/>
 <div>
-  <div>
-    <!--<RPaperTextField @value={{this.controlledValue}} @onChange={{this.onControlledChanged}} @mask="socialSecurity"/>-->
-    <!--<RPaperTextField @value={{this.controlledValue}} @onChange={{this.onControlledChanged}} @mask="currencyNoDecimal"/>-->
-    <!--<RPaperTextField @value={{this.controlledValue}} @onChange={{this.onControlledChanged}} @multiline={{true}} @rows={{5}}/>-->
-    <!--<RPaperTextField @value={{this.controlledValue}} @onChange={{this.onControlledChanged}}/>-->
-    <!--<RPaperNumberFormatTextField @thousandSeparator={{true}} @prefix="$ " @decimalScale={{2}} @onChange={{this.onMaskedTFChange}}/>-->
-    <!--<RPaperNumberFormatTextField @format="#### #### #### ####" @mask="_"/>-->
-  </div>
+  <!--<RPaperIMaskTextField @label="Regular IMask" @maskName="currencyNoDecimal" @onChange={{this.onRegularIMaskTextChanged}}/>-->
+  <RPaperIMaskTextField  @label="Controlled IMask" @maskName="currencyNoDecimal" @value={{this.controlIMaskTextValue}} @onChange={{this.onControlIMaskTextChanged}}/>
 </div>

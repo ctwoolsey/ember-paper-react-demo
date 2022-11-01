@@ -1,4 +1,4 @@
-import { action } from "@ember/object";
+import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { A } from '@ember/array';
@@ -7,20 +7,10 @@ import { tracked } from '@glimmer/tracking';
 export default class TestTextField extends Component {
   @service inputMaskTypes;
 
-  @tracked inputTextValue = 'B';
-  @tracked inputMaskTextValue = '';
-  @tracked inputUnMaskedTextValue;
-  @tracked regularInputTextValue = '';
   @tracked controlInputTextValue = '';
-
-  @tracked regularIMaskTextValue = '';
-  @tracked controlIMaskTextValue = '888';
-  @tracked controlNMaskTextValue = '999';
-
-  @tracked contentList = A(['A', 'B', 'C']);
-  @tracked currency = 'EUR';
-  @tracked controlledValue = '';
-  @tracked iMaskControlledValue = '';
+  @tracked controlIMaskTextValue = '';
+  @tracked controlNMaskTextValue = 999;
+  @tracked controlNMaskPatternValue = 246;
 
   constructor() {
     super(...arguments);
@@ -50,7 +40,7 @@ export default class TestTextField extends Component {
       thousandSeparator: true,
       prefix: '$ ',
       decimalScale: 0,
-  };
+    };
     const currencyWithDecimalNMask = {
       thousandSeparator: true,
       prefix: '$ ',
@@ -83,8 +73,8 @@ export default class TestTextField extends Component {
               mapToRadix: [','],
             },
           },
-        }
-      ]
+        },
+      ],
     };
 
     this.inputMaskTypes.addIMaskType(
@@ -99,153 +89,95 @@ export default class TestTextField extends Component {
       'percentageWithDecimal',
       percentageWithDecimalIMask
     );
-    this.inputMaskTypes.addNumberFormatType(
+    this.inputMaskTypes.addNumberFormatNumericType(
       'currencyNoDecimal',
       currencyNoDecimalNMask
     );
-    this.inputMaskTypes.addNumberFormatType(
+    this.inputMaskTypes.addNumberFormatNumericType(
       'currencyWithDecimal',
       currencyWithDecimalNMask
     );
-    this.inputMaskTypes.addNumberFormatType(
+    this.inputMaskTypes.addNumberFormatNumericType(
       'percentageWithDecimal',
       percentageWithDecimalNFMask
     );
 
-    /*this.inputMask.extendAliases({
-      currencyNoDecimal: {
-        alias: 'currency',
-        digits: 0,
-        prefix: '$ ',
-      },
-      creditScore: {
-        mask: '999',
-        placeholder: '_',
-      },
-      percentageWithDecimal: {
-        alias: 'percentage',
-        digits: 1,
-      },
-      socialSecurity: {
-        mask: '999--99--9999',
-      },
-    });*/
-    //this.inputMaskAliases = ;
-
-    // this.mask = { alias: 'currencyNoDecimal' };
-    //this.mask = 'aa-9{4}';
-
     this.iMask = /^\w+$/;
-    this.iMaskPrepare = (str) => { return str.toUpperCase(); };
+    this.iMaskPrepare = (str) => {
+      return str.toUpperCase();
+    };
 
     this.iMaskCurrencyMask = Number;
     this.iMaskCurrencyPrepare = (str) => {
       return `$ ${str}`;
     };
 
-    this.textFieldErrors = [
-      'error 1',
-      'error 2'
-    ]
+    this.textFieldErrors = ['error 1', 'error 2'];
 
     this.textFieldErrors = 'error 3';
+
+    this.inputModeInputProps = { inputMode: 'decimal' };
   }
 
-  @action
-  onIMaskInputTextChanged(value) {
-    console.log(`onIMaskInputTextChanged: ${value}`);
-  }
-
-  @action
-  onMaskedTFChange(value) {
-    console.log(`onMaskedTFChange, value: ${value}`);
-  }
-
-  @action
-  onControlledChanged(value) {
-    console.log(`React Demo -- onControlledChanged: this.controlledValue: ${value}`);
-    this.controlledValue = value;
-  }
-
-  @action
-  onInputTextChanged(value) {
-    this.inputTextValue = value;
-  }
-
-  @action
-  onInputTextInputMaskChanged(evt) {
-    this.inputUnMaskedTextValue = evt.target.value;
-  }
-
-  @action
-  onAddContent() {
-    this.contentList.pushObject('Y');
-  }
-
-  @action
-  onRemoveContent() {
-    this.contentList.popObject();
-  }
-
+  //keep
   @action
   onRegularInputTextChangedNative(evt) {
     console.log(`onRegularInputTextChangedNative: ${evt.target.value}`);
     this.controlInputTextValue = evt.target.value;
   }
 
-  @action
-  onRegularInputTextChanged(value) {
-    this.regularInputTextValue = value;
-    this.controlInputTextValue = this.regularInputTextValue;
-  }
-
+  //keep
   @action
   onControlInputTextChanged(value) {
     this.controlInputTextValue = value;
   }
 
-  @action
-  onUpdateControlIMaskTextValue() {
-    this.controlIMaskTextValue = '123';
-  }
-
+  //keep
   @action
   onRegularIMaskTextChanged(value) {
-//    console.log(`onRegularIMaskTextChanged: ${value}`);
-   // this.regularIMaskTextValue = value;
     this.controlIMaskTextValue = value;
   }
 
+  //keep
   @action
   onControlIMaskTextChanged(value) {
     console.log(`onControlIMaskTextChanged: ${value}`);
-    this.controlIMaskTextValue = value;
+   // this.controlIMaskTextValue = value;
   }
 
+  //keep
   @action
   onRegularNMaskTextChanged(value) {
-    console.log(`onRegularNMaskTextChanged: ${value}`);
     this.controlNMaskTextValue = value;
   }
 
+  //keep
   @action
   onControlNMaskTextChanged(value) {
-    console.log(`onControlNMaskTextChanged: ${value}`);
     this.controlNMaskTextValue = value;
   }
 
+  //keep
   @action
-  onUpdateControlBMaskTextValue() {
-    this.controlNMaskTextValue = '246';
+  onDefaultValueNMaskTextChanged(value) {}
+
+  @action
+  onControlNMaskPatternValueChanged(value) {
+    this.controlNMaskPatternValue = value;
   }
 
   @action
-  handleCurrencyChange(value) {
-    this.currency = value;
+  onFocusHandler(event) {
+    console.log('Focused');
   }
 
   @action
-  onIMaskPercentageChanged(value) {
+  onClickHandler(event) {
+    console.log('Clicked');
+  }
 
+  @action
+  onMouseHandler(event) {
+    console.log('Mouse Down');
   }
 }
