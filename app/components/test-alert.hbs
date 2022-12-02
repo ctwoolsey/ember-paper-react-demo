@@ -1,0 +1,36 @@
+<div id="alert-tests">
+  <h2>Tests for Alert Component</h2>
+  <div>
+    <RPaperAlert @severity="info">
+      <:message>This is an info alert with action — check it out!</:message>
+      <:action><RPaperButton @color="inherit" @size="small" @onClick={{this.actionClicked}}>OKAY</RPaperButton></:action>
+    </RPaperAlert>
+    <br>
+    <RPaperAlert @variant="outlined" @severity="error">
+      This is an error alert — check it out!
+    </RPaperAlert>
+    <br>
+    <RPaperAlert @severity="error">
+      <RPaperAlertTitle>Error</RPaperAlertTitle>
+      This is an error alert — check it out!
+    </RPaperAlert>
+    <br>
+    <RPaperAlert @severity="error">
+      <:message>
+      <RPaperAlertTitle>Error</RPaperAlertTitle>
+      This is an error alert — check it out!
+      </:message>
+      <:action><RPaperButton @color="inherit" @size="small" @onClick={{this.actionClicked}}>OKAY</RPaperButton></:action>
+    </RPaperAlert>
+    <br>
+    <RPaperAlert @severity="warning" @icon={{this.warningIcon}}>This is a warning alert — <strong>check it out!</strong></RPaperAlert>
+    <br>
+    <RPaperAlert @severity="info">This is an info alert — check it out!</RPaperAlert>
+    <br>
+    <RPaperAlert @severity="info" @icon={{false}}>Info No Icon</RPaperAlert>
+    <br>
+    <RPaperAlert @severity="success">This is a success alert — check it out!</RPaperAlert>
+    <br>
+  </div>
+
+</div>

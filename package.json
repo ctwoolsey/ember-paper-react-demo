@@ -70,7 +70,7 @@
     "ember-changeset": "^3.15.0",
     "ember-changeset-validations": "^3.16.0",
     "ember-modifier": "^2.1.2",
-    "ember-paper-react": "^3.0.3-beta.16"
+    "ember-paper-react": "3.1.0-beta.17"
   },
   "engines": {
     "node": "10.* || >= 12"

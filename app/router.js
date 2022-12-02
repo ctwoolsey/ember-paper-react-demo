@@ -8,6 +8,7 @@ export default class Router extends EmberRouter {
 
 Router.map(function () {
   this.route('home', { path: '/' });
+  this.route('alert');
   this.route('app-bar');
   this.route('attributes');
   this.route('autocomplete');
@@ -27,6 +28,7 @@ Router.map(function () {
   this.route('text-field');
   this.route('tooltip');
   this.route('paper');
+  this.route('snackbar');
   this.route('misc');
   this.route('validations');
 });

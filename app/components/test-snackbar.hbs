@@ -1,0 +1,29 @@
+<div id="snackbar-tests">
+  <h2>Tests for Snackbar Component</h2>
+  <div>
+    <button onclick={{this.openSnackbarSimpleButtonClicked}}>Open Simple Snackbar</button>
+    <button onclick={{this.openSnackbarAlertButtonClicked}}>Open Alert Snackbar</button>
+    <div>SimpleStateOpen: {{this.simpleSnackbarOpen}}  AlertStateOpen: {{this.alertSnackbarOpen}} </div>
+
+    <RPaperSnackbar
+      @open={{this.simpleSnackbarOpen}}
+      @message='Note archived'
+      @onClose={{this.simpleSnackbarOnClose}}
+      @autoHideDuration={{2000}}
+      @anchorOrigin={{this.simpleSnackbarPosition}}>
+      <:action><button onClick={{this.actionClicked}}>OKAY</button></:action>
+    </RPaperSnackbar>
+
+
+
+    <RPaperSnackbar
+      @open={{this.alertSnackbarOpen}}
+      @onClose={{this.alertSnackbarOnClose}}
+      @autoHideDuration={{5000}}
+      @anchorOrigin={{this.alertSnackbarPosition}}>
+      <RPaperAlert @severity="info">This is an info alert — check it out!</RPaperAlert>
+    </RPaperSnackbar>
+
+  </div>
+
+</div>
