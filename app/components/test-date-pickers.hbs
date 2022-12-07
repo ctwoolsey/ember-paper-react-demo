@@ -1,0 +1,80 @@
+<div id="date-pickers-tests">
+  <h2>Tests for DatePicker Components</h2>
+  <div><button onClick={{this.onChangeLocale}}>Toggle Locale</button></div>
+  <br>
+  <div><b>Date Picker</b></div>
+  <br>
+  <div>
+    <RPaperDatePicker @label="Basic Example"
+                      @onChange={{this.datePickerOnChange}}
+                      @value={{this.datePickerValue}}
+                      @PopperProps={{this.popperProps}}
+                      @id="this-is-me"
+                      @class="this-is-my-class"
+                      @locale={{this.locale}}/>
+  </div>
+
+  <div>
+    <RPaperDatePicker @label="Basic Example"
+                      @onChange={{this.datePickerOnChange}}
+                      @value={{this.datePickerValue}}
+                      @locale={{this.locale}}
+                      @isTouched={{true}}
+                      @errors={{this.errors}}
+                      />
+  </div>
+  <div><b>Time Picker</b></div>
+  <br>
+  <div>
+    <RPaperTimePicker @label="Basic Example"
+                      @onChange={{this.timePickerOnChange}}
+                      @value={{this.timePickerValue}}
+                      @locale={{this.locale}}/>
+  </div>
+  <br>
+  <div>
+    <RPaperTimePicker @label="Basic Example"
+                      @onChange={{this.timePickerOnChange}}
+                      @value={{this.timePickerValue}}
+                      @locale={{this.locale}}
+                      @isTouched={{true}}
+                      @errors={{this.errors}}/>
+  </div>
+  <div><b>Date/Time Picker</b></div>
+  <br>
+  <div>
+    <RPaperDateTimePicker @label="Date/Time Picker"
+                            @onChange={{this.dateTimePickerOnChange}}
+                            @value={{this.dateTimePickerValue}}
+                            @locale={{this.locale}}/>
+  </div>
+  <br>
+  <div>
+    <RPaperDateTimePicker @label="Date/Time Picker"
+                            @onChange={{this.dateTimePickerOnChange}}
+                            @value={{this.dateTimePickerValue}}
+                            @locale={{this.locale}}
+                            @isTouched={{true}}
+                            @errors={{this.errors}}/>
+  </div>
+  <div><b>Static Time Picker</b></div>
+  <br>
+  <div class="staticTimePicker">
+    <RPaperStaticTimePicker @label="Basic Example"
+                      @onChange={{this.staticTimePickerOnChange}}
+                      @value={{this.staticTimePickerValue}}
+                      @locale={{this.locale}}/>
+  </div>
+  <br>
+  <div class="staticTimePicker">
+    <RPaperStaticTimePicker @label="Basic Example"
+                      @onChange={{this.staticTimePickerOnChange}}
+                      @value={{this.staticTimePickerValue}}
+                      @locale={{this.locale}}
+                      @isTouched={{true}}
+                      @errors={{this.errors}}/>
+  </div>
+  <br>
+
+
+</div>

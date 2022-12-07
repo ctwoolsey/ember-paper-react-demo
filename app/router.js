@@ -19,6 +19,7 @@ Router.map(function () {
   this.route('checkbox-radio-switch');
   this.route('chip');
   this.route('circular-progress-backdrop');
+  this.route('date-pickers');
   this.route('dialog');
   this.route('drawer');
   this.route('icon');
