@@ -24,7 +24,6 @@ Router.map(function () {
   this.route('drawer');
   this.route('icon');
   this.route('menu');
-  this.route('select');
   this.route('tabs');
   this.route('text-field');
   this.route('tooltip');
