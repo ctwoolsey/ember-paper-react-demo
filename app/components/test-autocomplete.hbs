@@ -106,6 +106,7 @@
     <div>
       <RPaperAutocomplete  @multiple={{true}} @clearIcon={{this.clearIcon}} @disablePortal={{false}}
                            @sx={{this.acSX}} @options={{this.countries}} @label="Country" @value={{this.acValue}}
+                           @nativeOnChange={{true}}
                            @onChange={{this.onAcChange}} @onInputChange={{this.onInputAcChange}} @getOptionLabel={{this.countryOptionLabel}} @filterOptions={{this.countryFilterOptions}}>
         <:options>
           {{#each this.countriesFiltered as |option|}}

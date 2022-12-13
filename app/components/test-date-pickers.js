@@ -10,10 +10,11 @@ export default class TestDatePickers extends Component {
   @tracked staticTimePickerValue = null;
   @tracked dateTimePickerValue = null;
   @tracked locale = 'en';
+  @tracked errors;
 
   constructor() {
     super(...arguments);
-    this.errors = ['enter a valid date'];
+    this.errors = [];
     this.popperProps = { className: 'my-popper'}
   }
 
@@ -44,6 +45,15 @@ export default class TestDatePickers extends Component {
       this.locale = 'de';
     } else {
       this.locale = 'en';
+    }
+  }
+
+  @action
+  onChangeError() {
+    if (this.errors.length === 0) {
+      this.errors = ['enter a valid date'];
+    } else {
+      this.errors = [];
     }
   }
 }
